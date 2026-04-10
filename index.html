@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Todo App</h1>
+    </header>
+
+    <main>
+      <!-- Formulaire -->
+      <section id="formulaire">
+        <h2>Ajouter une tâche</h2>
+
+        <div class="champ">
+          <label for="titre">Titre *</label>
+          <input type="text" id="titre" placeholder="Titre de la tâche" />
+          <div class="erreur" id="erreur-titre">Le titre est obligatoire.</div>
+        </div>
+
+        <div class="champ">
+          <label for="description">Description</label>
+          <textarea
+            id="description"
+            placeholder="Description (optionnel)"
+          ></textarea>
+        </div>
+
+        <div class="champ">
+          <label for="statut">Statut</label>
+          <select id="statut">
+            <option value="a_faire">À faire</option>
+            <option value="en_cours">En cours</option>
+            <option value="termine">Terminé</option>
+          </select>
+        </div>
+
+        <div class="champ">
+          <label for="priorite">Priorité</label>
+          <select id="priorite">
+            <option value="faible">Faible</option>
+            <option value="normale" selected>Normale</option>
+            <option value="haute">Haute</option>
+            <option value="urgente">Urgente</option>
+          </select>
+        </div>
+
+        <div class="champ">
+          <label for="date_limite">Date limite</label>
+          <input type="date" id="date_limite" />
+        </div>
+
+        <button id="btn-ajouter" onclick="ajouterTache()">Ajouter</button>
+      </section>
+
+      <!-- Liste -->
+      <section id="liste">
+        <h2>Liste des tâches</h2>
+
+        <section id="filtres">
+          <button class="actif" data-filtre="toutes" onclick="filtrer(this)">
+            Toutes
+          </button>
+          <button data-filtre="a_faire" onclick="filtrer(this)">À faire</button>
+          <button data-filtre="en_cours" onclick="filtrer(this)">
+            En cours
+          </button>
+          <button data-filtre="termine" onclick="filtrer(this)">
+            Terminées
+          </button>
+        </section>
+
+        <div id="taches"></div>
+      </section>
+    </main>
+
+    <!-- Modal modification -->
+    <div id="modal">
+      <div id="contenu-modal">
+        <h2>Modifier la tâche</h2>
+
+        <input type="hidden" id="edit-id" />
+
+        <div class="champ">
+          <label for="edit-titre">Titre *</label>
+          <input type="text" id="edit-titre" />
+          <div class="erreur" id="erreur-edit-titre">
+            Le titre est obligatoire.
+          </div>
+        </div>
+
+        <div class="champ">
+          <label for="edit-description">Description</label>
+          <textarea id="edit-description"></textarea>
+        </div>
+
+        <div class="champ">
+          <label for="edit-statut">Statut</label>
+          <select id="edit-statut">
+            <option value="a_faire">À faire</option>
+            <option value="en_cours">En cours</option>
+            <option value="termine">Terminé</option>
+          </select>
+        </div>
+
+        <div class="champ">
+          <label for="edit-priorite">Priorité</label>
+          <select id="edit-priorite">
+            <option value="faible">Faible</option>
+            <option value="normale">Normale</option>
+            <option value="haute">Haute</option>
+            <option value="urgente">Urgente</option>
+          </select>
+        </div>
+
+        <div class="champ">
+          <label for="edit-date">Date limite</label>
+          <input type="date" id="edit-date" />
+        </div>
+
+        <div id="boutons-modal">
+          <button id="btn-annuler" onclick="fermerModal()">Annuler</button>
+          <button id="btn-sauvegarder" onclick="sauvegarder()">
+            Sauvegarder
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
