@@ -1,0 +1,242 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f2f2f2;
+  padding: 40px 20px;
+}
+
+header {
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+header h1 {
+  font-size: 28px;
+}
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ── Formulaire ── */
+
+section#formulaire {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+section#formulaire h2 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+div.champ {
+  margin-bottom: 12px;
+}
+
+div.champ label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+div.champ input,
+div.champ textarea,
+div.champ select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+div.champ textarea {
+  resize: vertical;
+  height: 70px;
+}
+
+div.erreur {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: none;
+}
+
+button#btn-ajouter {
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+button#btn-ajouter:hover {
+  background: #555;
+}
+
+/* ── Filtres ── */
+
+section#filtres {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+section#filtres button {
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+section#filtres button.actif {
+  background: #333;
+  color: white;
+  border-color: #333;
+}
+
+/* ── Liste ── */
+
+section#liste h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+div#taches {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+article.tache {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+article.tache h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+article.tache p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+div.meta {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+div.meta div {
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #eee;
+}
+
+div.actions {
+  display: flex;
+  gap: 8px;
+}
+
+div.actions button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+div.actions button:hover {
+  background: #f5f5f5;
+}
+
+div.actions button.supprimer:hover {
+  background: #ffe0e0;
+  border-color: red;
+  color: red;
+}
+
+div#vide {
+  text-align: center;
+  padding: 40px;
+  color: #aaa;
+  background: white;
+  border: 1px dashed #ddd;
+  border-radius: 8px;
+}
+
+/* ── Modal ── */
+
+div#modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+div#modal.ouvert {
+  display: flex;
+}
+
+div#contenu-modal {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  width: 480px;
+}
+
+div#contenu-modal h2 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+div#boutons-modal {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+div#boutons-modal button {
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button#btn-sauvegarder {
+  background: #333;
+  color: white;
+  border: none;
+}
+
+button#btn-annuler {
+  background: white;
+  border: 1px solid #ccc;
+}
